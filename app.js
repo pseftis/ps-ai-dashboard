@@ -29,8 +29,31 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (error) {
             console.error("Backend Error. Make sure Flask is running!", error);
-            // Fallback for visual demonstration purposes if API is unreachable
             console.log("Serving degraded mock data since backend is unreachable.");
+            
+            // Fallback Traffic Data
+            const timeLabels = [];
+            let d = new Date(); d.setMinutes(d.getMinutes() - 60);
+            for(let i=0; i<=12; i++) { timeLabels.push(`${d.getHours().toString().padStart(2, '0')}:${d.getMinutes().toString().padStart(2, '0')}`); d.setMinutes(d.getMinutes() + 5); }
+            for(let i=1; i<=6; i++) { timeLabels.push(`+${i*5}m`); }
+            
+            updateTrafficChart({
+                labels: timeLabels,
+                realFlow: [35, 42, 38, 45, 52, 48, 55, 60, 58, 65, 70, 75, 82, null, null, null, null, null, null],
+                lstmForecast: [null, null, null, null, null, null, null, null, null, null, null, null, 82, 88, 92, 95, 98, 99, 100],
+                currentSeverity: "High",
+                etaStandstill: "T-15m"
+            });
+            
+            // Fallback Electoral Data
+            updateElectoralCharts({
+                pow: { labels: ["Candidate A", "Candidate B", "Candidate C"], data: [35, 55, 10] },
+                radar: {
+                    labels: ["Incumbency", "Party Strength", "Past Work", "Personal Base", "Religious/Caste", "Digital Sentiment"],
+                    candidateA: [80, 70, 60, 85, 50, 40],
+                    candidateB: [20, 65, 85, 75, 80, 90]
+                }
+            });
         }
     }
 
