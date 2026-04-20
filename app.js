@@ -1,29 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Navigation Logic
-    const navItems = document.querySelectorAll('.nav-item');
-    const views = document.querySelectorAll('.dashboard-view');
-
-    navItems.forEach(item => {
-        item.addEventListener('click', () => {
-            // Remove active classes
-            navItems.forEach(nav => nav.classList.remove('active'));
-            views.forEach(view => {
-                view.classList.remove('active');
-                setTimeout(() => view.classList.add('hidden'), 300);
-            });
-
-            // Add active class to clicked
-            item.classList.add('active');
-            const targetId = item.getAttribute('data-target');
-            const targetView = document.getElementById(targetId);
-            
-            targetView.classList.remove('hidden');
-            // Small delay to allow display:block to apply before animating opacity
-            setTimeout(() => targetView.classList.add('active'), 50);
-        });
-    });
-
-    // Chart.js Default styling
+    // ----------------------------------------
     Chart.defaults.color = '#94a3b8';
     Chart.defaults.font.family = "'Inter', sans-serif";
 

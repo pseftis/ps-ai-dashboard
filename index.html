@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Solutions Dashboard | Problem Statements 4 & 5</title>
+    <title>Unified Cyber Analytics Platform</title>
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
@@ -20,13 +20,13 @@
                 <h2>NextGen AI</h2>
             </div>
             <nav class="nav-menu">
-                <button class="nav-item active" data-target="ps4">
+                <button class="nav-item" onclick="document.getElementById('ps4').scrollIntoView({behavior: 'smooth'})">
                     <span class="nav-icon">🚗</span>
-                    <span class="nav-label">Traffic Prediction Model</span>
+                    <span class="nav-label">Traffic Prediction</span>
                 </button>
-                <button class="nav-item" data-target="ps5">
+                <button class="nav-item" onclick="document.getElementById('ps5').scrollIntoView({behavior: 'smooth'})">
                     <span class="nav-icon">📊</span>
-                    <span class="nav-label">Electoral Analytics Matrix</span>
+                    <span class="nav-label">Electoral Analytics</span>
                 </button>
             </nav>
             <div class="sidebar-footer">
@@ -36,10 +36,9 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <!-- PS 4 Dashboard -->
-            <section id="ps4" class="dashboard-view active">
+            <!-- Traffic Section -->
+            <section id="ps4" class="dashboard-section">
                 <header class="section-header">
-                    <h3>Problem Statement 4</h3>
                     <h1>Traffic Congestion Modeling</h1>
                     <p>Hybrid Predictive Intelligence combining GPS data and real-time CCTV feeds for micro-view analysis.</p>
                 </header>
@@ -92,10 +91,9 @@
                 </div>
             </section>
 
-            <!-- PS 5 Dashboard -->
-            <section id="ps5" class="dashboard-view hidden">
+            <!-- Electoral Section -->
+            <section id="ps5" class="dashboard-section" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
                 <header class="section-header">
-                    <h3>Problem Statement 5</h3>
                     <h1>Electoral Analytics Matrix</h1>
                     <p>Quantifying OSINT, historical performance, and demographics for Probability of Win (PoW) modeling.</p>
                 </header>
