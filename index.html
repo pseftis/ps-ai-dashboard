@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Solutions Dashboard | Problem Statements 4 & 5</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h2>NextGen AI</h2>
+            </div>
+            <nav class="nav-menu">
+                <button class="nav-item active" data-target="ps4">
+                    <span class="nav-icon">🚗</span>
+                    <span class="nav-label">Traffic Prediction Model</span>
+                </button>
+                <button class="nav-item" data-target="ps5">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-label">Electoral Analytics Matrix</span>
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="status-indicator online">System Live</div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- PS 4 Dashboard -->
+            <section id="ps4" class="dashboard-view active">
+                <header class="section-header">
+                    <h3>Problem Statement 4</h3>
+                    <h1>Traffic Congestion Modeling</h1>
+                    <p>Hybrid Predictive Intelligence combining GPS data and real-time CCTV feeds for micro-view analysis.</p>
+                </header>
+                
+                <div class="grid-layout">
+                    <div class="card glass-card span-2">
+                        <div class="card-header">
+                            <h4>Real-Time Ingestion (Google Maps + CCTV Fusion)</h4>
+                            <span class="badge pulse">Live Feed</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="trafficChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="card glass-card">
+                        <div class="card-header">
+                            <h4>Temporal Forecasting (LSTM)</h4>
+                        </div>
+                        <div class="cctv-feed-container">
+                            <div class="cctv-proxy">
+                                <div class="cctv-overlay">
+                                    <p>Flow Rate: 42 veh/min</p>
+                                    <p class="warning-text">Severity: High</p>
+                                </div>
+                            </div>
+                            <div class="stats-row mt-2">
+                                <div class="stat-box">
+                                    <span class="stat-value text-red">85%</span>
+                                    <span class="stat-label">Congestion Risk</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-value">T-15m</span>
+                                    <span class="stat-label">ETA to Standstill</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card glass-card span-3 horizontal-flex">
+                        <div class="info-module">
+                            <h5>Visual Feed Diagnostics</h5>
+                            <p>Deep learning models (YOLO / Faster R-CNN) deployed on local CCTV to extract node densities.</p>
+                        </div>
+                        <div class="info-module">
+                            <h5>Cross-Modal Alerts</h5>
+                            <button class="btn btn-primary" id="validateAlertsBtn">Validate Alerts</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PS 5 Dashboard -->
+            <section id="ps5" class="dashboard-view hidden">
+                <header class="section-header">
+                    <h3>Problem Statement 5</h3>
+                    <h1>Electoral Analytics Matrix</h1>
+                    <p>Quantifying OSINT, historical performance, and demographics for Probability of Win (PoW) modeling.</p>
+                </header>
+
+                <div class="grid-layout">
+                    <div class="card glass-card span-1">
+                        <div class="card-header">
+                            <h4>Candidate PoW (Probability of Win)</h4>
+                        </div>
+                        <div class="chart-container pow-chart">
+                            <canvas id="powChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card glass-card span-2">
+                        <div class="card-header">
+                            <h4>Head-to-Head Multi-Factor Comparison</h4>
+                        </div>
+                        <div class="chart-container radar-chart">
+                            <canvas id="comparisonRadar"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card glass-card span-3">
+                        <div class="card-header">
+                            <h4>Live OSINT Sentiment Tracker</h4>
+                        </div>
+                        <div class="sentiment-grid">
+                            <div class="sentiment-card candidate-a">
+                                <h5>Candidate A (Incumbent)</h5>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar positive" style="width: 45%;"></div>
+                                </div>
+                                <span class="sentiment-label">Neutral / Mixed</span>
+                            </div>
+                            <div class="sentiment-card candidate-b">
+                                <h5>Candidate B (Challenger)</h5>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar extremely-positive" style="width: 80%;"></div>
+                                </div>
+                                <span class="sentiment-label">Highly Positive</span>
+                            </div>
+                            <div class="sentiment-card candidate-c">
+                                <h5>Candidate C (Independent)</h5>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar neutral" style="width: 20%;"></div>
+                                </div>
+                                <span class="sentiment-label">Low Visibility</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
