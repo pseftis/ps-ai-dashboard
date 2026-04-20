@@ -14,18 +14,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Async Fetcher Function
     async function fetchDashboardData() {
         try {
-            // 1. Fetch Traffic Forecast Data
             const trafficRes = await fetch(`${API_BASE_URL}/api/traffic/forecast`);
             if(trafficRes.ok) {
                 const trafficData = await trafficRes.json();
                 updateTrafficChart(trafficData);
+            } else {
+                throw new Error("Traffic API Not OK");
             }
 
-            // 2. Fetch Electoral Matrix Data
             const powRes = await fetch(`${API_BASE_URL}/api/electoral/matrix`);
             if(powRes.ok) {
                 const electoralData = await powRes.json();
                 updateElectoralCharts(electoralData);
+            } else {
+                throw new Error("Electoral API Not OK");
             }
         } catch (error) {
             console.error("Backend Error. Make sure Flask is running!", error);
